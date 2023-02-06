@@ -139,6 +139,8 @@ public class FileWriter : MonoBehaviour
 
         Debug.Log(JsonModelObj.envData.Humility);
 
+
+        // referencing loop
         string output = Newtonsoft.Json.JsonConvert.SerializeObject(JsonModelObj, Newtonsoft.Json.Formatting.Indented);
         File.WriteAllText(filePath, output);
 

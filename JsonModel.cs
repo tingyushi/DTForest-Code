@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class JsonModel : MonoBehaviour
+public class JsonModel 
 {
-    public _redPine redPine { get; set; }
-    public _oak oak { get; set; }
+    public _redPine redPine;
+    public _oak oak;
     public _beech beech { get; set; }
     public _birch birch { get; set; }
     public _whitePine whitePine { get; set; }
     public _redMaple redMaple { get; set; }
     public _redOak redOak { get; set; }
-    public _envData envData { get; set; }
+    public _envData envData  { get; set; }
 }
 
-public class _redPine : MonoBehaviour
+public class _redPine
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -24,7 +24,7 @@ public class _redPine : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _oak : MonoBehaviour
+public class _oak 
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -33,7 +33,7 @@ public class _oak : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _beech : MonoBehaviour
+public class _beech 
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -42,7 +42,7 @@ public class _beech : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _birch : MonoBehaviour
+public class _birch 
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -51,7 +51,7 @@ public class _birch : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _whitePine : MonoBehaviour
+public class _whitePine 
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -60,7 +60,7 @@ public class _whitePine : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _redMaple : MonoBehaviour
+public class _redMaple 
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -69,7 +69,7 @@ public class _redMaple : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _redOak : MonoBehaviour
+public class _redOak 
 {
     public string treeName { get; set; }
     public string Density { get; set; }
@@ -78,7 +78,7 @@ public class _redOak : MonoBehaviour
     public string Age { get; set; }
 }
 
-public class _envData : MonoBehaviour
+public class _envData 
 {
     public string Humility { get; set; }
     public string Temp { get; set; }

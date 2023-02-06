@@ -14,8 +14,6 @@ public class FileWriter : MonoBehaviour
     public Text notify;
     public FileReader FR;
 
-    private JsonModel JsonModelObj;
-
     public void Awake()
     {
         removeMsg();
@@ -64,7 +62,6 @@ public class FileWriter : MonoBehaviour
         if (plotNumber == 15)
         {
             filePath = "./dataCenter/overalldata.json";
-            Debug.Log("===");
         }
         else
         {
@@ -73,8 +70,7 @@ public class FileWriter : MonoBehaviour
 
         // read first
         string plotJsonData = File.ReadAllText(filePath);
-        JsonModelObj = Newtonsoft.Json.JsonConvert.DeserializeObject<JsonModel>(plotJsonData);
-
+        JsonModel JsonModelObj = JsonConvert.DeserializeObject<JsonModel>(plotJsonData);
 
         if (indicator.isEnvData)
         {
@@ -137,16 +133,12 @@ public class FileWriter : MonoBehaviour
             }
         }
 
-        Debug.Log(JsonModelObj.envData.Humility);
 
 
-        // referencing loop
-        string output = Newtonsoft.Json.JsonConvert.SerializeObject(JsonModelObj, Newtonsoft.Json.Formatting.Indented);
+        // Serilize and write
+        string output = Newtonsoft.Json.JsonConvert.SerializeObject(JsonModelObj);
         File.WriteAllText(filePath, output);
-
-        Debug.Log("========");
     }
-
 
 
     private void removeMsg()
@@ -170,6 +162,7 @@ public class FileWriter : MonoBehaviour
         return true;
     }
 
+
     private bool isIN(char target, char[] pool)
     {
         int i;
@@ -182,5 +175,4 @@ public class FileWriter : MonoBehaviour
         }
         return false;
     }
-        
 }

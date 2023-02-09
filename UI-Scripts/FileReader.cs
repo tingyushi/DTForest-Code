@@ -13,8 +13,6 @@ public class FileReader : MonoBehaviour
 
     public void readEnvData()
     {
-        string temp = "";
-
         int plotNumber = indicator.plotNumber;
 
         string filePath;
@@ -34,25 +32,24 @@ public class FileReader : MonoBehaviour
 
         if (indicator.EnvDataType.Equals("Humility"))
         {
-            temp =  JsonModelObj.envData.Humility;
+            currentValueDisp.text =  "Humility: " + JsonModelObj.envData.Humility;
         }
         else if (indicator.EnvDataType.Equals("Temp"))
         {
-            temp = JsonModelObj.envData.Temp;
+            currentValueDisp.text = "Temperature: " + JsonModelObj.envData.Temp;
         }
         else if (indicator.EnvDataType.Equals("SCContent"))
         {
-            temp = JsonModelObj.envData.SCContent;
+            currentValueDisp.text = "Soil Carbon Contents: " + JsonModelObj.envData.SCContent;
         }
         else if (indicator.EnvDataType.Equals("SNContent"))
         {
-            temp = JsonModelObj.envData.SNContent;
+            currentValueDisp.text = "Soil Nitrogen Contents: " + JsonModelObj.envData.SNContent;
         }
         else
         {
-            temp = JsonModelObj.envData.LAI;
+            currentValueDisp.text = "LAI: " + JsonModelObj.envData.LAI;
         }
-        currentValueDisp.text = "Current Value: " + temp;
     }
 
 

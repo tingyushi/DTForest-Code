@@ -9,6 +9,7 @@ public class JsonFileReader : MonoBehaviour
 
     public TreeParamDisplay treeParamDisplay;
     public EnvDataDisplay envDataDisplay;
+    public pieChartMaker graphMaker;
 
     public DataModel DataModelObj;
     private JsonModel JsonModelObj;   // used to parse the json file
@@ -54,5 +55,8 @@ public class JsonFileReader : MonoBehaviour
 
         //update env data display
         envDataDisplay.exactEnvData();
+
+        //draw pie chart
+        graphMaker.markChart();
     }
 }

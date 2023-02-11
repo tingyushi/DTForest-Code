@@ -149,7 +149,7 @@ public class FileWriter : MonoBehaviour
 
     private bool isValid(string s)
     {
-        char[] pool = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.' };
+        char[] pool = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', '-' };
 
         int i;
         for (i = 0; i < s.Length; i++)

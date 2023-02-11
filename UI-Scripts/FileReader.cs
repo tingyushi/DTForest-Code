@@ -17,6 +17,13 @@ public class FileReader : MonoBehaviour
 
         string filePath;
 
+        // no file to read
+        if(plotNumber == 0)
+        {
+            currentValueDisp.text = "Please select a plot";
+            return;
+        }
+
         if (plotNumber == 15)
         {
             filePath = "./dataCenter/overalldata.json";
@@ -32,34 +39,39 @@ public class FileReader : MonoBehaviour
 
         if (indicator.EnvDataType.Equals("Humility"))
         {
-            currentValueDisp.text =  "Humility: " + JsonModelObj.envData.Humility;
+            currentValueDisp.text =  "Current Humility: " + JsonModelObj.envData.Humility;
         }
         else if (indicator.EnvDataType.Equals("Temp"))
         {
-            currentValueDisp.text = "Temperature: " + JsonModelObj.envData.Temp;
+            currentValueDisp.text = "Current Temperature: " + JsonModelObj.envData.Temp;
         }
         else if (indicator.EnvDataType.Equals("SCContent"))
         {
-            currentValueDisp.text = "Soil Carbon Contents: " + JsonModelObj.envData.SCContent;
+            currentValueDisp.text = "Current Soil Carbon Contents: " + JsonModelObj.envData.SCContent;
         }
         else if (indicator.EnvDataType.Equals("SNContent"))
         {
-            currentValueDisp.text = "Soil Nitrogen Contents: " + JsonModelObj.envData.SNContent;
+            currentValueDisp.text = "Current Soil Nitrogen Contents: " + JsonModelObj.envData.SNContent;
         }
         else
         {
-            currentValueDisp.text = "LAI: " + JsonModelObj.envData.LAI;
+            currentValueDisp.text = "Current LAI: " + JsonModelObj.envData.LAI;
         }
     }
 
 
     public void readTreeParam()
     {
-        string temp = "";
-
         int plotNumber = indicator.plotNumber;
 
         string filePath;
+
+        // no file to read
+        if(plotNumber == 0)
+        {
+            currentValueDisp.text = "Please select a plot";
+            return;
+        }
 
         if (plotNumber == 15)
         {
@@ -78,21 +90,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.redPine.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.redPine.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.redPine.DBH;
+                currentValueDisp.text = "Current DBH: " + JsonModelObj.redPine.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.redPine.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.redPine.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.redPine.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.redPine.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
 
@@ -100,21 +111,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.oak.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.oak.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.oak.DBH;
+                currentValueDisp.text = "Current DBH: " +  JsonModelObj.oak.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.oak.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.oak.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.oak.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.oak.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
 
@@ -122,21 +132,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.beech.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.beech.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.beech.DBH;
+                currentValueDisp.text = "Current DBH: " + JsonModelObj.beech.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.beech.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.beech.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.beech.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.beech.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
 
@@ -144,21 +153,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.birch.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.birch.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.birch.DBH;
+                currentValueDisp.text = "Current DBH: " + JsonModelObj.birch.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.birch.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.birch.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.birch.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.birch.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
 
@@ -166,21 +174,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.redMaple.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.redMaple.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.redMaple.DBH;
+                currentValueDisp.text = "Current DBH: " + JsonModelObj.redMaple.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.redMaple.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.redMaple.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.redMaple.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.redMaple.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
 
@@ -188,21 +195,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.whitePine.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.whitePine.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.whitePine.DBH;
+                currentValueDisp.text = "Current DBH: " + JsonModelObj.whitePine.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.whitePine.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.whitePine.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.whitePine.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.whitePine.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
 
@@ -210,21 +216,20 @@ public class FileReader : MonoBehaviour
         {
             if (indicator.TreeParamType.Equals("Density"))
             {
-                temp = JsonModelObj.redOak.Density;
+                currentValueDisp.text = "Current Density: " + JsonModelObj.redOak.Density;
             }
             if (indicator.TreeParamType.Equals("DBH"))
             {
-                temp = JsonModelObj.redOak.DBH;
+                currentValueDisp.text = "Current DBH: " + JsonModelObj.redOak.DBH;
             }
             if (indicator.TreeParamType.Equals("Height"))
             {
-                temp = JsonModelObj.redOak.Height;
+                currentValueDisp.text = "Current Height: " + JsonModelObj.redOak.Height;
             }
             if (indicator.TreeParamType.Equals("Age"))
             {
-                temp = JsonModelObj.redOak.Age;
+                currentValueDisp.text = "Current Age: " + JsonModelObj.redOak.Age;
             }
-            currentValueDisp.text = "Current Value: " + temp;
             return;
         }
     }

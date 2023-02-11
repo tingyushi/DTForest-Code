@@ -16,9 +16,14 @@ public class UpdateButtonHandler : MonoBehaviour
         treeSelection.value = 0;
         TreeParamOptions.gameObject.SetActive(false);
         EnvDataOptions.gameObject.SetActive(true);
+
+        // IF EnvDataButton Just selected, clear the original text
+        if (!indicator.isEnvData)
+        {
+            FR.clearText();
+        }
         indicator.isEnvData = true;
         indicator.isTreeParam = false;
-        FR.clearText();
     }
 
     public void UpdateTreeParamHande()

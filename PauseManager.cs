@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
-    private bool isPaused = false;
-    public Text pauseMessage;
+    public bool isPaused = false;
+    public Image pauseIndicator;
 
     // Start is called before the first frame update
     void Start()
     {
-        pauseMessage.text = "";
+        pauseIndicator.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,14 +21,14 @@ public class PauseManager : MonoBehaviour
         {
             if(!isPaused)
             {
-                Time.timeScale = 0;
-                pauseMessage.text = "Paused";
+                //Time.timeScale = 0;
+                pauseIndicator.gameObject.SetActive(true);
                 isPaused = !isPaused;
             }
             else
             {
-                Time.timeScale = 1;
-                pauseMessage.text = "";
+                //Time.timeScale = 1;
+                pauseIndicator.gameObject.SetActive(false);
                 isPaused = !isPaused;
             } 
         }        

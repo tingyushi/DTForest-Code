@@ -17,6 +17,7 @@ public class pieChartMaker : MonoBehaviour
     public Image whitePinePortion;
     public Image redOakPortion;
 
+    public GameObject parentObject;
 
     private double[] values;
     private double sum;
@@ -31,40 +32,42 @@ public class pieChartMaker : MonoBehaviour
     private void setImagePortions()
     {
         float totalRot = 0;
-        Vector3 pos = new Vector3(260f, 550f, 0f);
-        Vector2 size = new Vector2(500f, 500f);
+        
 
-        redPinePortion.transform.position = pos; redPinePortion.rectTransform.sizeDelta = size;
+        Vector3 pos = new Vector3(150f, 200f, 0f);
+        Vector2 size = new Vector2(600f, 600f);
+
+        redPinePortion.transform.localPosition = pos; redPinePortion.rectTransform.sizeDelta = size;
         redPinePortion.fillAmount = (float)percentage[0];
         redPinePortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
         totalRot -= (float)percentage[0] * 360;
 
-        oakPortion.transform.position = pos; oakPortion.rectTransform.sizeDelta = size;
+        oakPortion.transform.localPosition = pos; oakPortion.rectTransform.sizeDelta = size;
         oakPortion.fillAmount = (float)percentage[1];
         oakPortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
         totalRot -= (float)percentage[1] * 360;
 
-        beechPortion.transform.position = pos; beechPortion.rectTransform.sizeDelta = size;
+        beechPortion.transform.localPosition = pos; beechPortion.rectTransform.sizeDelta = size;
         beechPortion.fillAmount = (float)percentage[2];
         beechPortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
         totalRot -= (float)percentage[2] * 360;
 
-        birchPortion.transform.position = pos; birchPortion.rectTransform.sizeDelta = size;
+        birchPortion.transform.localPosition = pos; birchPortion.rectTransform.sizeDelta = size;
         birchPortion.fillAmount = (float)percentage[3];
         birchPortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
         totalRot -= (float)percentage[3] * 360;
 
-        redMaplePortion.transform.position = pos; redMaplePortion.rectTransform.sizeDelta = size;
+        redMaplePortion.transform.localPosition = pos; redMaplePortion.rectTransform.sizeDelta = size;
         redMaplePortion.fillAmount = (float)percentage[4];
         redMaplePortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
         totalRot -= (float)percentage[4] * 360;
 
-        whitePinePortion.transform.position = pos; whitePinePortion.rectTransform.sizeDelta = size;
+        whitePinePortion.transform.localPosition = pos; whitePinePortion.rectTransform.sizeDelta = size;
         whitePinePortion.fillAmount = (float)percentage[5];
         whitePinePortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
         totalRot -= (float)percentage[5] * 360;
 
-        redOakPortion.transform.position = pos; redOakPortion.rectTransform.sizeDelta = size;
+        redOakPortion.transform.localPosition = pos; redOakPortion.rectTransform.sizeDelta = size;
         redOakPortion.fillAmount = (float)percentage[6];
         redOakPortion.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, totalRot));
     }

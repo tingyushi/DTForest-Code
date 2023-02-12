@@ -22,8 +22,8 @@ public class EnvDataDisplay : MonoBehaviour
     {
         s1 = "  Humility: " + DataModelObj.EnvData.Humility + " %\n\n";
         s2 = "  Temperature: " + DataModelObj.EnvData.Temp + " C\n\n";
-        s3 = "  Soil C Content: " + DataModelObj.EnvData.SCContent + " uL/L\n\n";
-        s4 = "  Soil N Content: " + DataModelObj.EnvData.SNContent + " mL/L\n\n";
+        s3 = "  Soil C Content: " + DataModelObj.EnvData.SCContent + "\n\n";
+        s4 = "  Soil N Content: " + DataModelObj.EnvData.SNContent + "\n\n";
         s5 = "  LAI: " + DataModelObj.EnvData.LAI;
 
         EnvDisp.text = s1 + s2 + s3 + s4 + s5;

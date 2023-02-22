@@ -39,7 +39,7 @@ public class FileReader : MonoBehaviour
 
         if (indicator.EnvDataType.Equals("Humility"))
         {
-            currentValueDisp.text =  "Current Humility: " + JsonModelObj.envData.Humility;
+            currentValueDisp.text =  "Current Humidity: " + JsonModelObj.envData.Humility;
         }
         else if (indicator.EnvDataType.Equals("Temp"))
         {

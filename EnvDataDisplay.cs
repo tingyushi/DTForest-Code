@@ -20,7 +20,7 @@ public class EnvDataDisplay : MonoBehaviour
 
     public void exactEnvData()
     {
-        s1 = "  Humility: " + DataModelObj.EnvData.Humility + " %\n\n";
+        s1 = "  Humidity: " + DataModelObj.EnvData.Humility + " %\n\n";
         s2 = "  Temperature: " + DataModelObj.EnvData.Temp + " C\n\n";
         s3 = "  Soil C Content: " + DataModelObj.EnvData.SCContent + "\n\n";
         s4 = "  Soil N Content: " + DataModelObj.EnvData.SNContent + "\n\n";

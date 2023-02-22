@@ -10,7 +10,7 @@ public class JsonFileReader : MonoBehaviour
     public TreeParamDisplay treeParamDisplay;
     public EnvDataDisplay envDataDisplay;
     public pieChartMaker graphMaker;
-
+    public treePlanting treePlanter;
     public DataModel DataModelObj;
     private JsonModel JsonModelObj;   // used to parse the json file
 
@@ -58,5 +58,8 @@ public class JsonFileReader : MonoBehaviour
 
         //draw pie chart
         graphMaker.markChart();
+
+        // plant trees
+        treePlanter.plantTrees(value);
     }
 }

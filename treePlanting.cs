@@ -50,8 +50,17 @@ public class treePlanting : MonoBehaviour
      * Index 5 --> White Pine
      * Index 6 --> Red Oak
      */
-    public List<GameObject> treeprefabs;
 
+    /*
+     * Potential solution to the seasonal change
+     */
+    /*
+    public List<GameObject> treeprefabsSpring;
+    public List<GameObject> treeprefabsSummer;
+    public List<GameObject> treeprefabsWinter;
+    */
+
+    public List<GameObject> treeprefabs;
 
     private int[] calculatedTreeNumbers()
     {
@@ -87,15 +96,41 @@ public class treePlanting : MonoBehaviour
         }
     }
 
-    private void generateCircleLocation(double x1, double y1, double r1, double x2, double y2, double r2, int numberOfPoints)
+    private void generateCircleLocation(List<Circle> circles,  int numberOfPoints)
     {
-
+        treelocal = new Vector3[numberOfPoints];
+        int counter = 0;
+       
+        while (counter < numberOfPoints)
+        {
+            Point randomPoint = new Point(UnityEngine.Random.Range(startingCoordinate, endingCoordinate),
+                                          UnityEngine.Random.Range(startingCoordinate, endingCoordinate));
+            if(! isPointInCircles(circles, randomPoint))
+            {
+                continue;
+            }
+            treelocal[counter] = new Vector3((float)randomPoint.getX(), 0f, (float)randomPoint.getY());
+            counter++;
+        }
+       
     }
 
-    private double distance(double x1, double y1, double x2, double y2)
+    /*
+     * Given a list of circles and a point
+     * Check if this point is in any circle from the list
+     */
+    private bool isPointInCircles(List<Circle> circles, Point point)
     {
-        return 0.0;
+        foreach (Circle circle in circles)
+        {
+            if (circle.isIn(point))
+            {
+                return true;
+            }
+        }
+        return false;
     }
+   
 
     public void cleanTrees()
     {
@@ -125,13 +160,77 @@ public class treePlanting : MonoBehaviour
          */
         int[] differentTreeNumbers = calculatedTreeNumbers();
 
-        Debug.Log("The number of trees is : " + differentTreeNumbers.Sum().ToString());
+        
 
         /*
         * Third step: generate tree locations
         */
-        generateSquareLocation(differentTreeNumbers.Sum());
+        if (plotNumberIndex == 0)
+        {
+            List<Circle> circles = new List<Circle>();
+            circles.Add(new Circle(new Point(72, 23), 14.0));
+            circles.Add(new Circle(new Point(34, 28), 21.0));
+            circles.Add(new Circle(new Point(71, 70), 19.0));
+            circles.Add(new Circle(new Point(33, 79), 13.0));
+            generateCircleLocation(circles, differentTreeNumbers.Sum());
+        }
+        else if (plotNumberIndex == 2)
+        {
+            List<Circle> circles = new List<Circle>();
+            circles.Add(new Circle(new Point(73, 18), 15.0));
+            circles.Add(new Circle(new Point(14, 10), 17.0));
+            circles.Add(new Circle(new Point(78, 77), 21.0));
+            circles.Add(new Circle(new Point(43, 84), 13.0));
+            generateCircleLocation(circles, differentTreeNumbers.Sum());
+        }
+        else if (plotNumberIndex == 3)
+        {
+            List<Circle> circles = new List<Circle>();
+            circles.Add(new Circle(new Point(66, 25), 31.0));
+            circles.Add(new Circle(new Point(17, 15), 15.0));
+            circles.Add(new Circle(new Point(80, 68), 16.0));
+            circles.Add(new Circle(new Point(35, 69), 34.0));
+            generateCircleLocation(circles, differentTreeNumbers.Sum());
+        }
+        else if (plotNumberIndex == 6)
+        {
+            List<Circle> circles = new List<Circle>();
+            circles.Add(new Circle(new Point(71, 23), 33.0));
+            circles.Add(new Circle(new Point(32, 50), 17.0));
+            circles.Add(new Circle(new Point(90, 87), 16.0));
+            circles.Add(new Circle(new Point(28, 93), 40.0));
+            generateCircleLocation(circles, differentTreeNumbers.Sum());
+        }
+        else if (plotNumberIndex == 10)
+        {
+            List<Circle> circles = new List<Circle>();
+            circles.Add(new Circle(new Point(68, 23), 22.0));
+            circles.Add(new Circle(new Point(14, 11), 14.0));
+            circles.Add(new Circle(new Point(67, 13), 17.0));
+            circles.Add(new Circle(new Point(27, 86), 27.0));
+            generateCircleLocation(circles, differentTreeNumbers.Sum());
+        }
+        else if (plotNumberIndex == 12)
+        {
+            List<Circle> circles = new List<Circle>();
+            circles.Add(new Circle(new Point(67, 22), 36.0));
+            circles.Add(new Circle(new Point(21, 25), 10.0));
+            circles.Add(new Circle(new Point(28, 92), 50.0));
+            generateCircleLocation(circles, differentTreeNumbers.Sum());
+        }
+        else
+        {
+            generateSquareLocation(differentTreeNumbers.Sum());
+        }
 
+        /*
+         * Debug Code
+         */
+        /*
+        Debug.Log("The number of trees is : " + differentTreeNumbers.Sum().ToString());
+        Debug.Log("The number of positions is : " + treelocal.Length.ToString());
+        Debug.Log("Plot Number Index is : " + plotNumberIndex.ToString());
+        */
 
         int posIndex = 0;
         double treeHeight;
@@ -247,6 +346,7 @@ public class treePlanting : MonoBehaviour
             posIndex++;
         }
 
+
         /*
          * Plant Red Oak
          */
@@ -256,6 +356,7 @@ public class treePlanting : MonoBehaviour
         upperBound = (float)(1.1 * standardScale);
         for (int i = 0; i < differentTreeNumbers[6]; i++)
         {
+
             GameObject treeinstance = Instantiate(treeprefabs[6]);
             treeinstance.transform.position = treelocal[posIndex];
             float randomScale = UnityEngine.Random.Range(lowerBound, upperBound);
@@ -263,6 +364,12 @@ public class treePlanting : MonoBehaviour
 
             //modity color here
             treeinstance.GetComponent<Renderer>().materials[1].color = new Color32(194, 31, 48, 255);
+
+            /*
+            Debug.Log("Collider ID = " + treeinstance.GetComponent<Collider>().ToString());
+            Debug.Log("Instance ID = " + treeinstance.GetInstanceID().ToString());
+            Debug.Log("========");
+            */
 
             trees.Add(treeinstance);
             posIndex++;

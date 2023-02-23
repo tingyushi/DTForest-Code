@@ -10,13 +10,6 @@ public class MouseLook : MonoBehaviour
     public PauseManager PM;
     private float xRotation = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Cursor.lockState = CursorLockMode.Locked;  //make sure the cursor is at the center of the screen
-        //Cursor.visible = true;
-    }
-
     // Update is called once per frame
     void Update()
     {

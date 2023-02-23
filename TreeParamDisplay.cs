@@ -27,58 +27,58 @@ public class TreeParamDisplay : MonoBehaviour
         curIndex = value;
         if(value == 0)
         {
-            s1 = "  Density: " + DataModelObj.RedPineData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.RedPineData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.RedPineData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.RedPineData.Age;
+            s1 = "  Density: " + DataModelObj.RedPineData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.RedPineData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.RedPineData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.RedPineData.Age + " years";
         }
 
         if(value == 1)
         {
-            s1 = "  Density: " + DataModelObj.OakData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.OakData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.OakData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.OakData.Age;
+            s1 = "  Density: " + DataModelObj.OakData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.OakData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.OakData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.OakData.Age + " years";
         }
 
         if (value == 2)
         {
-            s1 = "  Density: " + DataModelObj.BeechData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.BeechData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.BeechData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.BeechData.Age;
+            s1 = "  Density: " + DataModelObj.BeechData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.BeechData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.BeechData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.BeechData.Age + " years";
         }
 
         if (value == 3)
         {
-            s1 = "  Density: " + DataModelObj.BirchData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.BirchData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.BirchData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.BirchData.Age;
+            s1 = "  Density: " + DataModelObj.BirchData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.BirchData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.BirchData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.BirchData.Age + " years";
         }
 
         if (value == 4)
         {
-            s1 = "  Density: " + DataModelObj.RedMapleData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.RedMapleData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.RedMapleData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.RedMapleData.Age;
+            s1 = "  Density: " + DataModelObj.RedMapleData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.RedMapleData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.RedMapleData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.RedMapleData.Age + " years";
         }
 
         if (value == 5)
         {
-            s1 = "  Density: " + DataModelObj.WhitePineData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.WhitePineData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.WhitePineData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.WhitePineData.Age;
+            s1 = "  Density: " + DataModelObj.WhitePineData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.WhitePineData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.WhitePineData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.WhitePineData.Age + " years";
         }
 
         if (value == 6)
         {
-            s1 = "  Density: " + DataModelObj.RedOakData.Density + "\n\n";
-            s2 = "  DBH: " + DataModelObj.RedOakData.DBH + "\n\n";
-            s3 = "  Height: " + DataModelObj.RedOakData.Height + "\n\n";
-            s4 = "  Age: " + DataModelObj.RedOakData.Age;
+            s1 = "  Density: " + DataModelObj.RedOakData.Density + " trees/m^2\n\n";
+            s2 = "  DBH: " + DataModelObj.RedOakData.DBH + " cm\n\n";
+            s3 = "  Height: " + DataModelObj.RedOakData.Height + " m\n\n";
+            s4 = "  Age: " + DataModelObj.RedOakData.Age + " years";
         }
 
         TreeParamDisp.text = s1 + s2 + s3 + s4;

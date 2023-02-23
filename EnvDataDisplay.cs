@@ -21,9 +21,9 @@ public class EnvDataDisplay : MonoBehaviour
     public void exactEnvData()
     {
         s1 = "  Humidity: " + DataModelObj.EnvData.Humility + " %\n\n";
-        s2 = "  Temperature: " + DataModelObj.EnvData.Temp + " C\n\n";
-        s3 = "  Soil C Content: " + DataModelObj.EnvData.SCContent + "\n\n";
-        s4 = "  Soil N Content: " + DataModelObj.EnvData.SNContent + "\n\n";
+        s2 = "  Temperature: " + DataModelObj.EnvData.Temp + " °C\n\n";
+        s3 = "  Soil C Content: " + DataModelObj.EnvData.SCContent + " % Dry\n\n";
+        s4 = "  Soil N Content: " + DataModelObj.EnvData.SNContent + " % Dry\n\n";
         s5 = "  LAI: " + DataModelObj.EnvData.LAI;
 
         EnvDisp.text = s1 + s2 + s3 + s4 + s5;

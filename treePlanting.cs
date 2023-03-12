@@ -12,6 +12,7 @@ public class treePlanting : MonoBehaviour
     /*
      * define the number of trees in each plot.
      * The last number means the average number of trees in 14 plots.
+     * This is not used right now since we use density to calculate number of trees
      */
     private int[] plotTreeNumbers = { 178, 235, 178, 213, 432, 432, 213, 118, 235, 118, 178, 235, 213, 432, 243};
 
@@ -39,6 +40,8 @@ public class treePlanting : MonoBehaviour
     // including all the data about the plot
     public DataModel data;
 
+    // season controller --> get seasonal information
+    public SeasonController seasonController;
 
     /*
      * A list that contains all the tree model prefabs
@@ -51,16 +54,12 @@ public class treePlanting : MonoBehaviour
      * Index 6 --> Red Oak
      */
 
-    /*
-     * Potential solution to the seasonal change
-     */
-    /*
-    public List<GameObject> treeprefabsSpring;
-    public List<GameObject> treeprefabsSummer;
-    public List<GameObject> treeprefabsWinter;
-    */
+    /* Treefabs with leaves */
+    public List<GameObject> treeprefabsWL;
 
-    public List<GameObject> treeprefabs;
+    /* Treefabs without leaves */
+    public List<GameObject> treeprefabsWOL;
+
 
     private int[] calculatedTreeNumbers()
     {
@@ -223,6 +222,7 @@ public class treePlanting : MonoBehaviour
             generateSquareLocation(differentTreeNumbers.Sum());
         }
 
+
         /*
          * Debug Code
          */
@@ -232,12 +232,28 @@ public class treePlanting : MonoBehaviour
         Debug.Log("Plot Number Index is : " + plotNumberIndex.ToString());
         */
 
+
+
         int posIndex = 0;
         double treeHeight;
         double standardScale;
         float lowerBound;
         float upperBound;
 
+        /*
+         * use corresponding treefabs according to the seasonal information
+         */
+        List<GameObject> treeprefabs;
+        if (seasonController.haveLeaves)
+        {
+            treeprefabs = treeprefabsWL;
+        }
+        else
+        {
+            treeprefabs = treeprefabsWOL;
+        }
+
+        
 
         /*
          * Plant Red Pines
@@ -362,8 +378,14 @@ public class treePlanting : MonoBehaviour
             float randomScale = UnityEngine.Random.Range(lowerBound, upperBound);
             treeinstance.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
 
-            //modity color here
-            treeinstance.GetComponent<Renderer>().materials[1].color = new Color32(194, 31, 48, 255);
+            /*
+             * Modify tree color here
+             * But only does this when there are leaves
+             */
+            if (seasonController.haveLeaves)
+            {
+                treeinstance.GetComponent<Renderer>().materials[1].color = new Color32(194, 31, 48, 255);
+            }
 
             /*
             Debug.Log("Collider ID = " + treeinstance.GetComponent<Collider>().ToString());

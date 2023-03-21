@@ -12,10 +12,12 @@ public class SeasonController : MonoBehaviour
     public Button seasonChangeBut;
     public Sprite summerImage;
     public Sprite winterImage;
+    public ParticleSystem Snow;
 
     public void Awake()
     {
         seasonChangeBut.image.sprite = summerImage;
+        Snow.gameObject.SetActive(false);
     }
 
     public void changeSeason()
@@ -23,10 +25,12 @@ public class SeasonController : MonoBehaviour
         haveLeaves = !haveLeaves;
         if (haveLeaves)
         {
+            Snow.gameObject.SetActive(false);
             seasonChangeBut.image.sprite = summerImage;
         }
         if (!haveLeaves)
         {
+            Snow.gameObject.SetActive(true);
             seasonChangeBut.image.sprite = winterImage;
         }
 

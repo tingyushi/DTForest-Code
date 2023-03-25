@@ -9,7 +9,8 @@ public class ForestToUISceneManager : MonoBehaviour
 
     public void Plot14ToMain()
     {
-        SceneManager.UnloadScene(1);
         treePlanter.cleanTrees();
+        SceneManager.UnloadScene(1);
+        //treePlanter.cleanTrees();
     }
 }

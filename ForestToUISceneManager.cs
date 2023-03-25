@@ -5,14 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ForestToUISceneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start() {}
-
-    // Update is called once per frame
-    void Update() {}
+    public treePlanting treePlanter;
 
     public void Plot14ToMain()
     {
         SceneManager.UnloadScene(1);
+        treePlanter.cleanTrees();
     }
 }

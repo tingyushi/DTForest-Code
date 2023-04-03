@@ -4,6 +4,11 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: A button handler to show/hide environmental data types
+ */
+
 public class EnvDataOptionsHandler : MonoBehaviour
 {
     public ValueIndicator indicator;

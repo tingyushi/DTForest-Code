@@ -4,6 +4,10 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Read JSON files for displaying current value
+ */
 
 public class FileReader : MonoBehaviour
 {

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: JSON model for Newtonsoft parser
+ */
 
 public class JsonModel 
 {

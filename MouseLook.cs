@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: How to change perspective by using the mouse
+ */
+
 public class MouseLook : MonoBehaviour
 {
     public float mouseSensitivity = 150f;
@@ -13,7 +18,9 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if the system is paused, perspective change will disconnect with the mouse
         if (PM.isPaused) { return; }
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

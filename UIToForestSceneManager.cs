@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Change from main page to the forest model
+ */
 
 public class UIToForestSceneManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start() {}
-
-    // Update is called once per frame
-    void Update() {}
-
     public void goToForestScene()
     {
         Time.timeScale = 1;

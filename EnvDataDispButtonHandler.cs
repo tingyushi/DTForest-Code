@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: A button handler to show/hide environmental data
+ */
+
 public class EnvDataDispButtonHandler : MonoBehaviour
 {
     private bool isActive = false;

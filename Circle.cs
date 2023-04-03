@@ -1,5 +1,10 @@
 using System;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: A circle class used for modeling the special tree distribution
+ */
+
 public class Circle
 {
     private Point center;

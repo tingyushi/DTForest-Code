@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Threading;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Extract tree parameters and prepare string for displaying tree parameters
+ */
+
 public class TreeParamDisplay : MonoBehaviour
 {
     public DataModel DataModelObj;
@@ -15,12 +20,6 @@ public class TreeParamDisplay : MonoBehaviour
     private string s1, s2, s3, s4;
 
     public int curIndex = 0;
-
-    // Start is called before the first frame update
-    void Start(){}
-
-    // Update is called once per frame
-    void Update() {}
 
     public void extractTreeParam(int value)
     {

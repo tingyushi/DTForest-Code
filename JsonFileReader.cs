@@ -4,6 +4,11 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Reading Json File
+ */
+
 public class JsonFileReader : MonoBehaviour
 {
 

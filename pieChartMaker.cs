@@ -5,6 +5,10 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Make the pie chart to show the ratio of different tree types
+ */
 
 public class pieChartMaker : MonoBehaviour
 {

@@ -14,17 +14,19 @@ public class treePlanting : MonoBehaviour
      * The last number means the average number of trees in 14 plots.
      * This is not used right now since we use density to calculate number of trees
      */
-    private int[] plotTreeNumbers = { 178, 235, 178, 213, 432, 432, 213, 118, 235, 118, 178, 235, 213, 432, 243};
+    //private int[] plotTreeNumbers = { 178, 235, 178, 213, 432, 432, 213, 118, 235, 118, 178, 235, 213, 432, 243};
 
     /*
      * define heights of different tree models when scale is one
      * HSR : height scal ratio
      * Unit: meter
+     * The values here are not magic numbers, they are measures in unity editor
      */
     private double redPineHSR = 25.0;         private double oakHSR = 17.2 / 2;
     private double beechHSR = 35.47 / 2;      private double birchHSR = 22.18 / 2;
     private double redMapleHSR = 14.12 / 2;   private double whitePineHSR = 64.4 / 2;
     private double redOakHSR = 18.95 / 2;
+
 
     /*
      * Define plot information
@@ -61,6 +63,7 @@ public class treePlanting : MonoBehaviour
     public List<GameObject> treeprefabsWOL;
 
 
+    // calculate tree number of different tree type
     private int[] calculatedTreeNumbers()
     {
         double area = sideLength * sideLength;
@@ -77,6 +80,10 @@ public class treePlanting : MonoBehaviour
         return treenumbers;
     }
 
+    /*
+     * generate locations when tree distribution follows square distribution
+     * input: number of locations
+     */
     private void generateSquareLocation(int numberOfPoints)
     {
         treelocal = new Vector3[numberOfPoints];
@@ -85,16 +92,17 @@ public class treePlanting : MonoBehaviour
 
         for (i = 0; i < treelocal.Length; i++)
         {
-            /*
-             * The second parameter in the Vectors is related to the height, we need to somehow
-             * get it from the heightmap of the terrain.
-             */
             treelocal[i] = new Vector3(UnityEngine.Random.Range(startingCoordinate, endingCoordinate),
                                        0f,
                                        UnityEngine.Random.Range(startingCoordinate, endingCoordinate));
         }
     }
 
+    /*
+     * generate locations when tree distribution follows circle distribution
+     * input1: a list of circles
+     * input2: number of locations
+     */
     private void generateCircleLocation(List<Circle> circles,  int numberOfPoints)
     {
         treelocal = new Vector3[numberOfPoints];
@@ -130,7 +138,7 @@ public class treePlanting : MonoBehaviour
         return false;
     }
    
-
+    // remove all the trees
     public void cleanTrees()
     {
         if (trees.Count == 0)
@@ -142,6 +150,11 @@ public class treePlanting : MonoBehaviour
     }
 
 
+
+    /*
+     * plant trees
+     * input: plot number
+     */
     public void plantTrees(int plotNumberIndex)
     {
         //first step: clean the trees from the previous plot
@@ -221,17 +234,6 @@ public class treePlanting : MonoBehaviour
         {
             generateSquareLocation(differentTreeNumbers.Sum());
         }
-
-
-        /*
-         * Debug Code
-         */
-        /*
-        Debug.Log("The number of trees is : " + differentTreeNumbers.Sum().ToString());
-        Debug.Log("The number of positions is : " + treelocal.Length.ToString());
-        Debug.Log("Plot Number Index is : " + plotNumberIndex.ToString());
-        */
-
 
 
         int posIndex = 0;
@@ -386,12 +388,6 @@ public class treePlanting : MonoBehaviour
             {
                 treeinstance.GetComponent<Renderer>().materials[1].color = new Color32(194, 31, 48, 255);
             }
-
-            /*
-            Debug.Log("Collider ID = " + treeinstance.GetComponent<Collider>().ToString());
-            Debug.Log("Instance ID = " + treeinstance.GetInstanceID().ToString());
-            Debug.Log("========");
-            */
 
             trees.Add(treeinstance);
             posIndex++;

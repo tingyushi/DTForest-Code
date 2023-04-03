@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Allow users to center the mouse when clicking 'C'
+ */
+
 public class CursorManager : MonoBehaviour
 {
     public bool control;
-
-
-    void Start()
-    {
-        
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -20,7 +18,6 @@ public class CursorManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
             control = false;
         }
         if (Input.GetKeyDown(KeyCode.C))

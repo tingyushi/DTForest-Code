@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Extract environmental data from the data model and then
+ * prepare the string for visualization.
+ */
+
 public class EnvDataDisplay : MonoBehaviour
 {
 

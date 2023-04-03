@@ -6,6 +6,11 @@ using TMPro;
 using System.IO;
 using Newtonsoft.Json;
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Write JSON files
+ */
+
 public class FileWriter : MonoBehaviour
 {
 

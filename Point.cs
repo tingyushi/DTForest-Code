@@ -1,3 +1,9 @@
+
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: A helper class of Circle
+ */
+
 public class Point
 {
     private double x;

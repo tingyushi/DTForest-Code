@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+/*
+ * Author: Digital Twin Forest Team
+ * Purpose: Simulate summer and winter season
+ */
+
 public class SeasonController : MonoBehaviour
 {
     public bool haveLeaves = true;
@@ -14,6 +19,7 @@ public class SeasonController : MonoBehaviour
     public Sprite winterImage;
     public ParticleSystem Snow;
 
+    // set the initial season(summer)
     public void Awake()
     {
         seasonChangeBut.image.sprite = summerImage;
@@ -34,6 +40,7 @@ public class SeasonController : MonoBehaviour
             seasonChangeBut.image.sprite = winterImage;
         }
 
+        // after changing the season, we need to plant corresponding trees
         treePlanter.plantTrees(plotSelection.value);
     }
 }
